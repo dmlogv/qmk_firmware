@@ -71,9 +71,9 @@ enum custom_keycodes {
 #define ENT_LWR LT(_LOWER, KC_ENT)
 #define ESC_LWR LT(_LOWER, KC_ESC)
 
-#define   R_NUM LT(_NUMPAD, KC_R)
-#define     F_F LT(_F, KC_F)
-#define V_MOUSE LT(_MOUSEPAD, KC_V)
+#define W_MOUSE LT(_MOUSEPAD, KC_W)
+#define   E_NUM LT(_NUMPAD, KC_E)
+#define     R_F LT(_F, KC_R)
 
 #define HYPR_EN HYPR_T(KC_0)
 #define HYPR_RU HYPR_T(KC_1)
@@ -85,9 +85,9 @@ enum custom_keycodes {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_EN] = LAYOUT(
-      HYPR_EN, GRV_LGU, KC_Q,    KC_W,    KC_E,      R_NUM,  T_LBRC,       Y_RBRC,    KC_U,    KC_I,    KC_O,    KC_P, LBR_RGU, HYPR_RU,
-               KC_LCTL, KC_A,    KC_S,    KC_D,        F_F,  G_MINS,        H_EQL,    KC_J,    KC_K,    KC_L, KC_SCLN, QUO_RCT,
-               KC_LALT, KC_Z,    KC_X,    KC_C,    V_MOUSE,    KC_B,         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, BSL_RAL,
+      HYPR_EN, GRV_LGU,    KC_Q, W_MOUSE,   E_NUM,     R_F,  T_LBRC,       Y_RBRC,    KC_U,    KC_I,    KC_O,    KC_P, LBR_RGU, HYPR_RU,
+               KC_LCTL,    KC_A,    KC_S,    KC_D,    KC_F,  G_MINS,        H_EQL,    KC_J,    KC_K,    KC_L, KC_SCLN, QUO_RCT,
+               KC_LALT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, BSL_RAL,
                                           TAB_RSE, SPC_LSH, ENT_LWR,      ESC_LWR, BSP_RSH, DEL_RSE
     ),
 
