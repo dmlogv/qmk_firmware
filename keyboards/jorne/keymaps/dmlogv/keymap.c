@@ -75,6 +75,14 @@ enum custom_keycodes {
 #define   E_NUM LT(_NUMPAD, KC_E)
 #define     R_F LT(_F, KC_R)
 
+#define  F_LGUI MT(MOD_LGUI, KC_F)
+#define  D_LALT MT(MOD_LALT, KC_D)
+#define  A_LCTL MT(MOD_LCTL, KC_A)
+
+#define  J_RGUI MT(MOD_RGUI, KC_J)
+#define  K_RALT MT(MOD_RALT, KC_K)
+#define SC_RCTL MT(MOD_RCTL, KC_SCLN)
+
 #define HYPR_EN HYPR_T(KC_0)
 #define HYPR_RU HYPR_T(KC_1)
 
@@ -86,7 +94,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_EN] = LAYOUT(
       HYPR_EN, GRV_LGU,    KC_Q, W_MOUSE,   E_NUM,     R_F,  T_LBRC,       Y_RBRC,    KC_U,    KC_I,    KC_O,    KC_P, LBR_RGU, HYPR_RU,
-               KC_LCTL,    KC_A,    KC_S,    KC_D,    KC_F,  G_MINS,        H_EQL,    KC_J,    KC_K,    KC_L, KC_SCLN, QUO_RCT,
+               KC_LCTL,  A_LCTL,    KC_S,  D_LALT,  F_LGUI,  G_MINS,        H_EQL,  J_RGUI,  K_RALT,    KC_L, SC_RCTL, QUO_RCT,
                KC_LALT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, BSL_RAL,
                                           TAB_RSE, SPC_LSH, ENT_LWR,      ESC_LWR, BSP_RSH, DEL_RSE
     ),
@@ -234,9 +242,6 @@ bool oled_task_user(void) {
         oled_write_P(PSTR("WPM: "), false);
         oled_write(get_u8_str(get_current_wpm(), ' '), false);
     }
-    return true;
+    
+    return false;
 }
-
-#ifdef oled_task_kb
-    #define oled_task_kb(void) { return true; }
-#endif

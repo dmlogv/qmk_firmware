@@ -20,4 +20,4 @@
 #define RGBLIGHT_VAL_STEP 8
 #endif
 
-#define TAPPING_TERM 175
+#define TAPPING_TERM 250
