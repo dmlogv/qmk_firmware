@@ -67,9 +67,9 @@ enum custom_keycodes {
 #define SPC_LSH MT(MOD_LSFT, KC_SPC)
 
 #define DEL_RSE LT(_RAISE, KC_DEL)
-#define TAB_RSE LT(_RAISE, KC_TAB)
+#define TAB_LWR LT(_LOWER, KC_TAB)
 #define ENT_LWR LT(_LOWER, KC_ENT)
-#define ESC_LWR LT(_LOWER, KC_ESC)
+#define ESC_RSE LT(_RAISE, KC_ESC)
 
 #define W_MOUSE LT(_MOUSEPAD, KC_W)
 #define   E_NUM LT(_NUMPAD, KC_E)
@@ -96,7 +96,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       HYPR_EN, GRV_LGU,    KC_Q, W_MOUSE,   E_NUM,     R_F,  T_LBRC,       Y_RBRC,    KC_U,    KC_I,    KC_O,    KC_P, LBR_RGU, HYPR_RU,
                KC_LCTL,  A_LCTL,    KC_S,  D_LALT,  F_LGUI,  G_MINS,        H_EQL,  J_RGUI,  K_RALT,    KC_L, SC_RCTL, QUO_RCT,
                KC_LALT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, BSL_RAL,
-                                          TAB_RSE, SPC_LSH, ENT_LWR,      ESC_LWR, BSP_RSH, DEL_RSE
+                                          ESC_RSE, SPC_LSH, TAB_LWR,      ENT_LWR, BSP_RSH, DEL_RSE
     ),
 
     [_RU] = LAYOUT(
