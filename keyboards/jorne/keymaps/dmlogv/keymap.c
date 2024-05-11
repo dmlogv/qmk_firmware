@@ -17,35 +17,16 @@ enum layers {
 
 // Tap Dance
 enum {
-    TD_T_LBRC,
-    TD_Y_RBRC,
-    TD_G_MINS,
-    TD_H_EQL,
-
-    TD_YE_YO,
     TD_SS_HS
 };
 
 #define _ATDD ACTION_TAP_DANCE_DOUBLE
 
 tap_dance_action_t tap_dance_actions[] = {
-    // _EN
-    [TD_T_LBRC] = _ATDD(KC_T, KC_LBRC),
-    [TD_Y_RBRC] = _ATDD(KC_Y, KC_RBRC),
-    [TD_G_MINS] = _ATDD(KC_G, KC_MINS),
-    [TD_H_EQL]  = _ATDD(KC_H, KC_EQL),
-
     // _RU
-    [TD_YE_YO] = _ATDD(KC_T, KC_GRV),
     [TD_SS_HS] = _ATDD(KC_M, KC_RBRC)
 };
 
-#define T_LBRC TD(TD_T_LBRC)
-#define Y_RBRC TD(TD_Y_RBRC)
-#define G_MINS TD(TD_G_MINS)
-#define H_EQL  TD(TD_H_EQL)
-
-#define YE_YO TD(TD_YE_YO)
 #define SS_HS TD(TD_SS_HS)
 
 
@@ -86,21 +67,18 @@ enum custom_keycodes {
 #define HYPR_EN HYPR_T(KC_0)
 #define HYPR_RU HYPR_T(KC_1)
 
-#define GRV_LGU MT(MOD_LGUI, KC_GRV)
-#define LBR_RGU MT(MOD_RGUI, KC_LBRC)
-
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_EN] = LAYOUT(
-      HYPR_EN, GRV_LGU,    KC_Q, W_MOUSE,   E_NUM,     R_F,  T_LBRC,       Y_RBRC,    KC_U,    KC_I,    KC_O,    KC_P, LBR_RGU, HYPR_RU,
-               KC_LCTL,  A_LCTL,    KC_S,  D_LALT,  F_LGUI,  G_MINS,        H_EQL,  J_RGUI,  K_RALT,    KC_L, SC_RCTL, QUO_RCT,
-               KC_LALT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, BSL_RAL,
+      XXXXXXX,  KC_GRV,    KC_Q, W_MOUSE,   E_NUM,     R_F,    KC_T,         KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, KC_LBRC, XXXXXXX,
+               HYPR_EN,  A_LCTL,    KC_S,  D_LALT,  F_LGUI,    KC_G,         KC_H,  J_RGUI,  K_RALT,    KC_L, SC_RCTL, QUO_RCT,
+               HYPR_RU,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, BSL_RAL,
                                           ESC_RSE, SPC_LSH, TAB_LWR,      ENT_LWR, BSP_RSH, DEL_RSE
     ),
 
     [_RU] = LAYOUT(
-      _______, _______, _______, _______, _______, _______,   YE_YO,      _______, _______, _______, _______, _______, _______, _______,
+      _______, _______, _______, _______, _______, _______, _______,      _______, _______, _______, _______, _______, _______, _______,
                _______, _______, _______, _______, _______, _______,      _______, _______, _______, _______, _______, _______,
                _______, _______, _______, _______, _______, _______,      _______,   SS_HS, _______, _______, _______, _______,
                                           _______, _______, _______,      _______, _______, _______
@@ -114,9 +92,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [_F] = LAYOUT(
-      _______, _______, _______, _______, _______, _______, _______,      _______,   KC_F7,   KC_F8,    KC_F9,  KC_F10, _______, _______,
-               _______, _______, _______, _______, _______, _______,      _______,   KC_F4,   KC_F5,    KC_F6,  KC_F11, _______,
-               _______, _______, _______, _______, _______, _______,      _______,   KC_F1,   KC_F2,    KC_F3,  KC_F12, _______,
+      _______, _______, _______, _______, _______, _______, _______,      _______,   KC_F7,   KC_F8,    KC_F9,  KC_F10,  KC_F11, _______,
+               _______, _______, _______, _______, _______, _______,      _______,   KC_F4,   KC_F5,    KC_F6,  KC_F12, _______,
+               _______, _______, _______, _______, _______, _______,      _______,   KC_F1,   KC_F2,    KC_F3, _______, _______,
                                           _______, _______, _______,      _______, _______, _______
     ),
 
